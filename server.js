@@ -11,7 +11,7 @@ const app = express();
 const session = require('express-session');
 const cookieParser = require("cookie-parser");
 process.env.TZ = 'UTC';
-app.use(cors('http://localhost:3000'));
+app.use(cors('https://danish-2709.github.io/react-path-client'));
 app.use(session({ secret: 'H#k7^P3wLs&Rt@9v!ZnY5qR8zFkA2eV', resave: true, saveUninitialized: true  })); 
 app.use(bodyParser.json());
 app.use(cookieParser());

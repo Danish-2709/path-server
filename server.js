@@ -15,14 +15,16 @@ app.use(cors('http://localhost:3000'));
 app.use(session({ secret: 'H#k7^P3wLs&Rt@9v!ZnY5qR8zFkA2eV', resave: true, saveUninitialized: true  })); 
 app.use(bodyParser.json());
 app.use(cookieParser());
-
+app.get('/', (req, res) => {
+  res.send('Welcome to the root of the Pathology server!');
+});
 
 // Create a MySQL connection
 const config = {
-  user: 'sa',
-  password: '123',
-  server: 'DESKTOP-PD2OT2D\\SERVER1', // or IP address
-  database: 'createDepart',
+  user: 'rayanpath',
+  password: '@rayan123#',
+  server: '103.21.58.192', // or IP address
+  database: 'rayangfr_PathOnline',
   options: {
     encrypt: true,
     trustServerCertificate: true,

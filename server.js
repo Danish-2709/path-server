@@ -56,7 +56,7 @@ app.post('/api/MyLogIn', (req, res) => {
   request.input('username', sql.VarChar(50), username);
   request.input('password', sql.NVarChar(100), password);
 
-  const queryString = 'SELECT top 1  LoginType,LoginName, [Password],LoginMaster.OID, SSID, SSYear, LabName, CentreType, Line1 FROM [createDepart].[dbo].[loginMaster] inner join Orgmaster on Orgmaster.OID=LoginMaster.OID, Sessionmaster where LoginName=@username and Password=@password order by SSID desc';
+  const queryString = 'SELECT top 1  LoginType, LoginName, [Password], LoginMaster.OID, SSID, SSYear, LabName, CentreType, Line1 FROM loginMaster inner join Orgmaster on Orgmaster.OID=LoginMaster.OID, Sessionmaster where LoginName=@username and Password=@password order by SSID desc';
   request.query(queryString, function (error, results, fields) {
     if (error) {
       console.error('Error during database query:', error);
